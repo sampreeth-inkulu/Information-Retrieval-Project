@@ -188,6 +188,10 @@ if __name__ == "__main__":
                     doc_wt1[i] = 1 + np.log(tf)                    
                     doc_wt2[i] = (1 + np.log(tf))/(1 + np.log(tf_avg))
                     doc_wt3[i] = 0.5 + (0.5*tf)/max_tf
+            
+            doc_wt1 = doc_wt1/np.linalg.norm(doc_wt1)
+            doc_wt2 = doc_wt2/np.linalg.norm(doc_wt2)
+            doc_wt3 = doc_wt3/np.linalg.norm(doc_wt3)
                 
             for query_id in scoring1:
                 # print("q2.5")
